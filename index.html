@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NVO987 — Open decentralized web infrastructure connecting identity, research, archives, publishing, media, data, cryptography and persistent digital identifiers.">
+<meta name="author" content="Nicholas Van-Orton">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#f26a21">
+<link rel="canonical" href="https://nvo987.us/">
+<title>NVO987 | Open Decentralized Web Infrastructure</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- DID document -->
+<link rel="alternate" type="application/did+json" href="https://identity.nvo987.us/.well-known/did.json">
+
+<!-- DID domain linkage proof -->
+<link rel="alternate" type="application/did+ld+json" href="https://identity.nvo987.us/.well-known/did-configuration.json">
+
+<!-- Canonical DID -->
+<meta name="did" content="did:web:identity.nvo987.us">
+
+<!-- Identity authority -->
+<link rel="me" href="https://identity.nvo987.us">
+
+<!-- =========================================================
+     OPEN GRAPH
+========================================================= -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NVO987">
+<meta property="og:title" content="NVO987 | Open Decentralized Web Infrastructure">
+<meta property="og:description" content="Open decentralized web infrastructure connecting identity, research, archives, publishing, media, data, cryptography and persistent digital identifiers.">
+<meta property="og:url" content="https://nvo987.us/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nvo987.us/og-image.jpg">
+<meta property="og:image:alt" content="NVO987 — Open Decentralized Web Infrastructure">
+
+
+<!-- =========================================================
+     X / TWITTER
+========================================================= -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nvo987">
+<meta name="twitter:creator" content="@nvo987">
+<meta name="twitter:title" content="NVO987 | Open Decentralized Web Infrastructure">
+<meta name="twitter:description" content="Open decentralized web infrastructure connecting identity, research, archives, publishing, media, data, cryptography and persistent digital identifiers.">
+<meta name="twitter:image" content="https://nvo987.us/og-image.jpg">
+<meta name="twitter:image:alt" content="NVO987 — Open Decentralized Web Infrastructure">
+
+
+<!-- =========================================================
+     IDENTITY / SOCIAL
+========================================================= -->
+
+<link rel="me" href="https://x.com/nvo987">
+<link rel="me" href="https://www.instagram.com/nvo987/">
+<link rel="me" href="https://www.linkedin.com/in/nvo987/">
+<link rel="me" href="https://bsky.app/profile/nvo987.us">
+
+
+<!-- =========================================================
+     PERFORMANCE / FONTS
+========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+:root{
+    --paper:#f4f1e9;
+    --paper-2:#ebe7dd;
+    --ink:#151515;
+    --muted:#68655e;
+    --line:rgba(21,21,21,.16);
+
+    /* GLOBAL GRID — deliberately softened */
+    --grid:rgba(21,21,21,.045);
+
+    --orange:#f26a21;
+    --orange-soft:rgba(242,106,33,.22);
+    --dark:#171717;
+    --white:#f5f2ea;
+
+    --page:28px;
+    --max:1500px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    position:relative;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   GLOBAL DRAWING GRID
+   Softened and moved behind page content so it does not
+   interfere visually with links/text.
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.42;
+    background-image:
+        linear-gradient(var(--grid) 1px,transparent 1px),
+        linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:60px 60px;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.08;
+    background-image:
+        linear-gradient(rgba(242,106,33,.10) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(242,106,33,.10) 1px,transparent 1px);
+    background-size:300px 300px;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+.container{
+    width:min(calc(100% - (var(--page) * 2)),var(--max));
+    margin:auto;
+}
+
+/* Keep actual page content above the global drawing grid */
+main,
+footer{
+    position:relative;
+    z-index:1;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(244,241,233,.96);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+    min-height:104px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-shrink:0;
+}
+
+.brand-mark{
+    width:64px;
+    height:64px;
+    border:1px solid rgba(21,21,21,.28);
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,transparent 49.5%,rgba(21,21,21,.08) 50%,transparent 50.5%),
+        linear-gradient(transparent 49.5%,rgba(21,21,21,.08) 50%,transparent 50.5%);
+}
+
+.brand-mark::before,
+.brand-mark::after{
+    content:"";
+    position:absolute;
+    background:var(--orange);
+    z-index:2;
+}
+
+.brand-mark::before{
+    width:1px;
+    height:100%;
+    left:50%;
+    top:0;
+}
+
+.brand-mark::after{
+    width:100%;
+    height:1px;
+    top:50%;
+    left:0;
+}
+
+.brand-name{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:16px;
+    letter-spacing:.38em;
+    font-weight:500;
+    white-space:nowrap;
+}
+
+.main-nav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:42px;
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    display:block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    line-height:1.2;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    padding:10px 0 9px;
+    position:relative;
+    white-space:nowrap;
+}
+
+.main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:2px;
+    background:var(--orange);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after{
+    transform:scaleX(1);
+}
+
+/* =========================================================
+   GEOMETRIC DRAWING
+========================================================= */
+
+.hero{
+    position:relative;
+    min-height:850px;
+    padding:130px 0 100px;
+    overflow:hidden;
+}
+
+.geometry{
+    position:absolute;
+    width:780px;
+    height:780px;
+    right:-100px;
+    top:55px;
+    pointer-events:none;
+
+    /* softened */
+    opacity:.58;
+
+    z-index:1;
+    will-change:transform;
+}
+
+.geometry .circle{
+    position:absolute;
+    width:570px;
+    height:570px;
+    border:1px solid rgba(242,106,33,.20);
+    border-radius:50%;
+    left:105px;
+    top:105px;
+    animation:rotate 32s linear infinite;
+}
+
+.geometry .circle::before,
+.geometry .circle::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
+
+.geometry .circle::before{
+    inset:48px;
+    border:1px solid rgba(21,21,21,.075);
+}
+
+.geometry .circle::after{
+    inset:105px;
+    border:1px solid rgba(242,106,33,.11);
+}
+
+.geometry .square{
+    position:absolute;
+    width:420px;
+    height:420px;
+    left:180px;
+    top:180px;
+    border:1px solid rgba(21,21,21,.10);
+    transform:rotate(31deg);
+    animation:floatRotate 20s ease-in-out infinite;
+}
+
+.geometry .square-two{
+    position:absolute;
+    width:285px;
+    height:285px;
+    left:247px;
+    top:247px;
+    border:1px solid rgba(242,106,33,.16);
+    transform:rotate(-25deg);
+    animation:floatRotateReverse 17s ease-in-out infinite;
+}
+
+.geometry .square-three{
+    position:absolute;
+    width:155px;
+    height:155px;
+    left:312px;
+    top:312px;
+    border:1px solid rgba(21,21,21,.08);
+    transform:rotate(45deg);
+    animation:floatRotateSmall 14s ease-in-out infinite;
+}
+
+.geometry .line-a,
+.geometry .line-b,
+.geometry .line-c,
+.geometry .line-d{
+    position:absolute;
+    height:1px;
+    transform-origin:center;
+}
+
+.geometry .line-a{
+    width:760px;
+    top:390px;
+    left:10px;
+    background:rgba(21,21,21,.09);
+    transform:rotate(24deg);
+}
+
+.geometry .line-b{
+    width:710px;
+    top:390px;
+    left:35px;
+    background:rgba(242,106,33,.09);
+    transform:rotate(-28deg);
+}
+
+.geometry .line-c{
+    width:610px;
+    top:390px;
+    left:85px;
+    background:rgba(21,21,21,.075);
+    transform:rotate(90deg);
+}
+
+.geometry .line-d{
+    width:500px;
+    top:390px;
+    left:140px;
+    background:rgba(21,21,21,.06);
+    transform:rotate(0deg);
+}
+
+.geometry .node{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--orange);
+    opacity:.56;
+    box-shadow:
+        0 0 0 8px rgba(242,106,33,.07),
+        0 0 0 18px rgba(242,106,33,.025);
+    animation:pulse 3.4s ease-in-out infinite;
+}
+
+.geometry .node.one{
+    left:120px;
+    top:230px;
+}
+
+.geometry .node.two{
+    right:92px;
+    top:115px;
+    animation-delay:.8s;
+}
+
+.geometry .node.three{
+    right:135px;
+    bottom:120px;
+    animation-delay:1.4s;
+}
+
+.geometry .node.four{
+    left:190px;
+    bottom:82px;
+    animation-delay:2s;
+}
+
+.geometry .cross{
+    position:absolute;
+    width:34px;
+    height:34px;
+    left:372px;
+    top:373px;
+    animation:crossRotate 18s linear infinite;
+}
+
+.geometry .cross::before,
+.geometry .cross::after{
+    content:"";
+    position:absolute;
+    background:var(--orange);
+}
+
+.geometry .cross::before{
+    width:34px;
+    height:1px;
+    left:0;
+    top:17px;
+}
+
+.geometry .cross::after{
+    width:1px;
+    height:34px;
+    left:17px;
+    top:0;
+}
+
+@keyframes rotate{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+@keyframes floatRotate{
+    0%,100%{
+        transform:rotate(31deg) translate(0,0);
+    }
+    50%{
+        transform:rotate(42deg) translate(14px,-12px);
+    }
+}
+
+@keyframes floatRotateReverse{
+    0%,100%{
+        transform:rotate(-25deg) translate(0,0);
+    }
+    50%{
+        transform:rotate(-12deg) translate(-12px,14px);
+    }
+}
+
+@keyframes floatRotateSmall{
+    0%,100%{
+        transform:rotate(45deg) translate(0,0);
+    }
+    50%{
+        transform:rotate(65deg) translate(8px,-8px);
+    }
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:.42;
+    }
+    50%{
+        transform:scale(1.25);
+        opacity:.72;
+    }
+}
+
+@keyframes crossRotate{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+    position:relative;
+    z-index:5;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    line-height:1.4;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    margin-bottom:58px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:74px;
+    height:2px;
+    flex-shrink:0;
+    background:var(--orange);
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(92px,11vw,185px);
+    font-weight:500;
+    line-height:.76;
+    letter-spacing:-.055em;
+    max-width:1050px;
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--orange);
+    margin-left:.04em;
+}
+
+.hero-lead{
+    max-width:960px;
+    margin-top:68px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(30px,3vw,48px);
+    line-height:1.12;
+}
+
+.hero-meta{
+    margin-top:76px;
+    border:1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    position:relative;
+    z-index:6;
+    background:rgba(244,241,233,.88);
+}
+
+.meta-cell{
+    min-height:150px;
+    padding:29px 31px;
+    border-right:1px solid var(--line);
+}
+
+.meta-cell:last-child{
+    border-right:0;
+}
+
+.meta-label{
+    display:block;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:31px;
+}
+
+.meta-value{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:16px;
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.layer-section{
+    padding:110px 0;
+    position:relative;
+}
+
+.layer-section.dark{
+    background:var(--dark);
+    color:var(--white);
+}
+
+.layer-section.dark::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.075;
+    pointer-events:none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.32) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.32) 1px,transparent 1px);
+    background-size:80px 80px;
+}
+
+.layer-header{
+    display:grid;
+    grid-template-columns:100px 1fr auto;
+    align-items:end;
+    gap:30px;
+    padding-bottom:34px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    z-index:2;
+}
+
+.dark .layer-header{
+    border-color:rgba(255,255,255,.18);
+}
+
+.layer-number{
+    font-family:"IBM Plex Mono",monospace;
+    color:var(--orange);
+    font-size:17px;
+    letter-spacing:.1em;
+}
+
+.layer-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(58px,6vw,100px);
+    line-height:.85;
+    font-weight:500;
+    letter-spacing:-.04em;
+}
+
+.layer-tag{
+    font-family:"IBM Plex Mono",monospace;
+    color:var(--muted);
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.dark .layer-tag{
+    color:#8d8a84;
+}
+
+.layer-description{
+    max-width:940px;
+    margin:40px 0 58px;
+    font-size:21px;
+    line-height:1.65;
+    color:var(--muted);
+    position:relative;
+    z-index:2;
+}
+
+.dark .layer-description{
+    color:#bcb8b0;
+}
+
+/* =========================================================
+   INFRASTRUCTURE
+========================================================= */
+
+.infrastructure-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    position:relative;
+    z-index:2;
+    align-items:start;
+}
+
+.infrastructure-card{
+    min-height:300px;
+    border:1px solid var(--line);
+    padding:31px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-self:start;
+    background:rgba(244,241,233,.68);
+    overflow:hidden;
+    pointer-events:none;
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+.infrastructure-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--orange);
+    background:rgba(242,106,33,.055);
+}
+
+.dark .infrastructure-card{
+    border-color:rgba(255,255,255,.16);
+    background:rgba(255,255,255,.025);
+}
+
+.dark .infrastructure-card:hover{
+    border-color:var(--orange);
+    background:rgba(242,106,33,.06);
+}
+
+.card-number{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    color:var(--orange);
+    margin-bottom:47px;
+}
+
+.card-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:42px;
+    line-height:1;
+    margin-bottom:21px;
+    font-weight:500;
+}
+
+.card-description{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.6;
+    max-width:500px;
+}
+
+.dark .card-description{
+    color:#aaa69f;
+}
+
+.card-links{
+    margin-top:26px;
+    padding-top:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.card-link{
+    display:flex;
+    align-items:flex-start;
+    align-self:flex-start;
+    gap:12px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:15px;
+    line-height:1.5;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    transition:color .2s ease;
+    pointer-events:auto;
+}
+
+.card-link::before{
+    content:"↗";
+    color:var(--orange);
+    flex-shrink:0;
+}
+
+.card-link:hover{
+    color:var(--orange);
+}
+
+/* =========================================================
+   INSTITUTION
+========================================================= */
+
+.institution{
+    padding-top:155px;
+    padding-bottom:155px;
+    overflow:hidden;
+}
+
+.institution-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    align-items:start;
+    position:relative;
+    z-index:2;
+}
+
+.institution-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(68px,8vw,125px);
+    line-height:.82;
+    font-weight:500;
+    letter-spacing:-.05em;
+}
+
+.institution-title span{
+    display:block;
+}
+
+.institution-mark{
+    font-family:"IBM Plex Mono",monospace;
+    color:var(--orange);
+    font-size:16px;
+    margin-bottom:36px;
+}
+
+.institution-content{
+    padding-top:82px;
+}
+
+.institution-portal{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    letter-spacing:.12em;
+    color:#aaa69f;
+    text-transform:uppercase;
+    margin-bottom:52px;
+}
+
+.institution-portal:hover{
+    color:var(--orange);
+}
+
+.institution-content h3{
+    font-size:25px;
+    line-height:1.3;
+    font-weight:500;
+    margin-bottom:35px;
+}
+
+.institution-content p{
+    font-size:19px;
+    line-height:1.78;
+    color:#c2beb6;
+}
+
+/* =========================================================
+   CIVILISATION
+========================================================= */
+
+.civilisation{
+    padding:135px 0 165px;
+}
+
+.civilisation-intro{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    margin-bottom:72px;
+}
+
+.civilisation-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(68px,8vw,130px);
+    line-height:.78;
+    font-weight:500;
+    letter-spacing:-.05em;
+}
+
+.civilisation-copy{
+    padding-top:17px;
+    font-size:22px;
+    line-height:1.68;
+    color:var(--muted);
+}
+
+.civilisation-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+    align-items:start;
+}
+
+.civilisation-card{
+    min-height:330px;
+    padding:37px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+}
+
+.civilisation-card::after{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:190px;
+    border:1px solid var(--orange-soft);
+    border-radius:50%;
+    right:-60px;
+    bottom:-60px;
+    transition:transform .5s ease;
+}
+
+.civilisation-card:hover::after{
+    transform:scale(1.65);
+}
+
+.civilisation-card .card-title{
+    font-size:52px;
+}
+
+.civilisation-card .card-description{
+    max-width:650px;
+    font-size:17px;
+}
+
+/* =========================================================
+   ARCHITECTURE
+========================================================= */
+
+.architecture{
+    padding:125px 0;
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+}
+
+.architecture::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.28;
+    background-image:
+        linear-gradient(rgba(21,21,21,.065) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(21,21,21,.065) 1px,transparent 1px);
+    background-size:60px 60px;
+}
+
+.architecture-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:100px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.architecture-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(58px,6vw,100px);
+    line-height:.88;
+    font-weight:500;
+    letter-spacing:-.04em;
+}
+
+.architecture-copy{
+    margin-top:37px;
+    max-width:600px;
+    color:var(--muted);
+    font-size:19px;
+    line-height:1.72;
+}
+
+.architecture-diagram{
+    min-height:490px;
+    border:1px solid var(--line);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:rgba(244,241,233,.42);
+}
+
+.architecture-diagram::before,
+.architecture-diagram::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    height:1px;
+    background:rgba(21,21,21,.08);
+}
+
+.architecture-diagram::after{
+    transform:rotate(90deg);
+}
+
+.diagram-ring{
+    width:320px;
+    height:320px;
+    border:1px solid rgba(242,106,33,.28);
+    border-radius:50%;
+    position:absolute;
+    animation:rotate 25s linear infinite;
+}
+
+.diagram-ring::before,
+.diagram-ring::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(21,21,21,.10);
+}
+
+.diagram-ring::before{
+    inset:36px;
+}
+
+.diagram-ring::after{
+    inset:82px;
+}
+
+.diagram-node{
+    position:absolute;
+    width:125px;
+    height:125px;
+    border:1px solid var(--ink);
+    background:var(--paper);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:3;
+}
+
+.diagram-node strong{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.diagram-node span{
+    color:var(--orange);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    margin-top:8px;
+}
+
+.diagram-node.individual{
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.diagram-node.institution{
+    bottom:35px;
+    left:35px;
+}
+
+.diagram-node.civilisation{
+    bottom:35px;
+    right:35px;
+}
+
+/* =========================================================
+   DOCUMENTATION
+========================================================= */
+
+.documentation{
+    padding:155px 0;
+    position:relative;
+}
+
+.documentation-inner{
+    max-width:1100px;
+}
+
+.documentation-label{
+    color:var(--orange);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:37px;
+}
+
+.documentation h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(58px,7vw,110px);
+    line-height:.9;
+    font-weight:500;
+    letter-spacing:-.045em;
+}
+
+.documentation p{
+    max-width:780px;
+    margin-top:48px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    line-height:1.2;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--dark);
+    color:var(--white);
+    padding:68px 0 37px;
+}
+
+.footer-main{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+    padding-bottom:57px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+}
+
+.footer-name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:44px;
+}
+
+.footer-contact{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14px;
+    line-height:1.8;
+    text-align:right;
+}
+
+.footer-contact a:hover{
+    color:var(--orange);
+}
+
+.did-link{
+    display:inline-block;
+    margin-top:12px;
+    color:#b8b4ac;
+    transition:color .2s ease;
+}
+
+.did-link:hover{
+    color:var(--orange);
+}
+
+.footer-bottom{
+    padding-top:27px;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    color:#77746e;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(32px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    :root{
+        --page:24px;
+    }
+
+    .header-inner{
+        min-height:96px;
+    }
+
+    .main-nav{
+        gap:27px;
+    }
+
+    .main-nav a{
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:105px;
+    }
+
+    .hero-meta{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .meta-cell:nth-child(2){
+        border-right:0;
+    }
+
+    .meta-cell:nth-child(-n+2){
+        border-bottom:1px solid var(--line);
+    }
+
+    .infrastructure-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .institution-layout,
+    .architecture-grid,
+    .civilisation-intro{
+        grid-template-columns:1fr;
+        gap:55px;
+    }
+
+    .institution-content{
+        padding-top:0;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media(max-width:760px){
+
+    :root{
+        --page:27px;
+    }
+
+    /* Global grid substantially weakened on mobile */
+    body::before{
+        opacity:.24;
+        background-size:54px 54px;
+    }
+
+    body::after{
+        opacity:.05;
+        background-size:270px 270px;
+    }
+
+    .header-inner{
+        min-height:118px;
+        align-items:flex-start;
+        padding:17px 0 18px;
+        gap:15px;
+    }
+
+    .brand{
+        gap:14px;
+    }
+
+    .brand-mark{
+        width:48px;
+        height:48px;
+    }
+
+    .brand-name{
+        font-size:14px;
+        letter-spacing:.30em;
+    }
+
+    .main-nav{
+        display:grid;
+        grid-template-columns:auto auto;
+        justify-content:end;
+        align-items:start;
+        gap:13px 27px;
+        width:auto;
+        padding-top:0;
+    }
+
+    .main-nav a{
+        font-size:12px;
+        line-height:1.2;
+        letter-spacing:.10em;
+        padding:6px 0 7px;
+    }
+
+    .main-nav a:last-child{
+        grid-column:1 / -1;
+        justify-self:start;
+    }
+
+    .main-nav a::after{
+        bottom:0;
+    }
+
+    .hero{
+        padding:83px 0 75px;
+    }
+
+    .geometry{
+        width:510px;
+        height:510px;
+        right:-275px;
+        top:150px;
+        opacity:.43;
+    }
+
+    .geometry .circle{
+        width:390px;
+        height:390px;
+        left:60px;
+        top:60px;
+    }
+
+    .geometry .circle::before{
+        inset:35px;
+    }
+
+    .geometry .circle::after{
+        inset:73px;
+    }
+
+    .geometry .square{
+        width:295px;
+        height:295px;
+        left:108px;
+        top:108px;
+    }
+
+    .geometry .square-two{
+        width:205px;
+        height:205px;
+        left:153px;
+        top:153px;
+    }
+
+    .geometry .square-three{
+        width:115px;
+        height:115px;
+        left:198px;
+        top:198px;
+    }
+
+    .geometry .line-a{
+        width:510px;
+        top:255px;
+    }
+
+    .geometry .line-b{
+        width:480px;
+        top:255px;
+    }
+
+    .geometry .line-c{
+        width:440px;
+        top:255px;
+    }
+
+    .geometry .line-d{
+        width:380px;
+        top:255px;
+    }
+
+    .geometry .node{
+        width:14px;
+        height:14px;
+    }
+
+    .geometry .node.one{
+        left:72px;
+        top:150px;
+    }
+
+    .geometry .node.two{
+        right:58px;
+        top:80px;
+    }
+
+    .geometry .node.three{
+        right:88px;
+        bottom:75px;
+    }
+
+    .geometry .node.four{
+        left:125px;
+        bottom:55px;
+    }
+
+    .geometry .cross{
+        width:26px;
+        height:26px;
+        left:242px;
+        top:242px;
+    }
+
+    .geometry .cross::before{
+        width:26px;
+        top:13px;
+    }
+
+    .geometry .cross::after{
+        height:26px;
+        left:13px;
+    }
+
+    .eyebrow{
+        font-size:11px;
+        line-height:1.5;
+        gap:11px;
+        margin-bottom:46px;
+        letter-spacing:.13em;
+    }
+
+    .eyebrow::before{
+        width:42px;
+    }
+
+    .hero h1{
+        font-size:clamp(70px,19vw,120px);
+        line-height:.79;
+    }
+
+    .hero-lead{
+        font-size:27px;
+        line-height:1.13;
+        margin-top:49px;
+    }
+
+    .hero-meta{
+        grid-template-columns:1fr;
+        margin-top:54px;
+    }
+
+    .meta-cell{
+        min-height:125px;
+        padding:25px 27px;
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .meta-cell:last-child{
+        border-bottom:0;
+    }
+
+    .meta-label{
+        font-size:12px;
+        margin-bottom:25px;
+    }
+
+    .meta-value{
+        font-size:15px;
+    }
+
+    .layer-section{
+        padding:76px 0;
+    }
+
+    .layer-header{
+        grid-template-columns:55px 1fr;
+        gap:10px;
+        padding-bottom:27px;
+    }
+
+    .layer-number{
+        font-size:15px;
+    }
+
+    .layer-title{
+        font-size:60px;
+    }
+
+    .layer-tag{
+        grid-column:2;
+        font-size:11px;
+        margin-top:3px;
+    }
+
+    /* =====================================================
+       ONLY 03 — CIVILISATION HEADER TEXT
+       Keeps "03" beside "Civilisation" and places
+       "NEXARIUM LAYER" directly underneath it.
+    ===================================================== */
+
+    .civilisation .layer-header{
+        grid-template-columns:55px minmax(0,1fr);
+        grid-template-rows:auto auto;
+        column-gap:10px;
+        row-gap:5px;
+        align-items:start;
+    }
+
+    .civilisation .layer-header .layer-number{
+        grid-column:1;
+        grid-row:1;
+        padding-top:9px;
+    }
+
+    .civilisation .layer-header .layer-title{
+        grid-column:2;
+        grid-row:1;
+        margin:0;
+        line-height:.88;
+    }
+
+    .civilisation .layer-header .layer-tag{
+        grid-column:2;
+        grid-row:2;
+        margin:1px 0 0;
+        padding:0;
+        line-height:1.3;
+        align-self:start;
+    }
+
+    .layer-description{
+        font-size:19px;
+        line-height:1.6;
+        margin:34px 0 47px;
+    }
+
+    .infrastructure-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .infrastructure-card{
+        min-height:300px;
+        padding:30px;
+    }
+
+    .card-number{
+        font-size:13px;
+        margin-bottom:44px;
+    }
+
+    .card-title{
+        font-size:43px;
+    }
+
+    .card-description{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    .card-links{
+        margin-top:24px;
+        gap:16px;
+    }
+
+    .card-link{
+        font-size:15px;
+        line-height:1.5;
+    }
+
+    .institution{
+        padding:92px 0;
+    }
+
+    .institution-title{
+        font-size:74px;
+    }
+
+    .institution-content{
+        padding-top:0;
+    }
+
+    .institution-portal{
+        font-size:12px;
+        line-height:1.5;
+        margin-bottom:42px;
+    }
+
+    .institution-content h3{
+        font-size:22px;
+        line-height:1.35;
+        margin-bottom:28px;
+    }
+
+    .institution-content p{
+        font-size:18px;
+        line-height:1.7;
+    }
+
+    .civilisation{
+        padding:92px 0;
+    }
+
+    .civilisation-intro{
+        gap:42px;
+        margin-bottom:54px;
+    }
+
+    .civilisation-title{
+        font-size:76px;
+    }
+
+    .civilisation-copy{
+        font-size:20px;
+        line-height:1.65;
+    }
+
+    .civilisation-grid{
+        grid-template-columns:1fr;
+    }
+
+    .civilisation-card{
+        min-height:310px;
+        padding:31px;
+    }
+
+    .civilisation-card .card-title{
+        font-size:50px;
+    }
+
+    .architecture{
+        padding:92px 0;
+    }
+
+    .architecture::before{
+        opacity:.18;
+    }
+
+    .architecture-grid{
+        gap:55px;
+    }
+
+    .architecture-title{
+        font-size:62px;
+    }
+
+    .architecture-copy{
+        font-size:18px;
+        line-height:1.68;
+    }
+
+    .architecture-diagram{
+        min-height:410px;
+    }
+
+    .diagram-ring{
+        width:245px;
+        height:245px;
+    }
+
+    .diagram-node{
+        width:100px;
+        height:100px;
+    }
+
+    .diagram-node strong{
+        font-size:11px;
+    }
+
+    .diagram-node.individual{
+        top:27px;
+    }
+
+    .diagram-node.institution{
+        bottom:27px;
+        left:22px;
+    }
+
+    .diagram-node.civilisation{
+        bottom:27px;
+        right:22px;
+    }
+
+    .documentation{
+        padding:105px 0;
+    }
+
+    .documentation-label{
+        font-size:12px;
+    }
+
+    .documentation h2{
+        font-size:62px;
+    }
+
+    .documentation p{
+        font-size:28px;
+        line-height:1.18;
+    }
+
+    footer{
+        padding:58px 0 32px;
+    }
+
+    .footer-main{
+        flex-direction:column;
+        gap:35px;
+        padding-bottom:48px;
+    }
+
+    .footer-name{
+        font-size:40px;
+    }
+
+    .footer-contact{
+        text-align:left;
+        font-size:13px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        font-size:11px;
+        line-height:1.6;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:430px){
+
+    :root{
+        --page:23px;
+    }
+
+    .header-inner{
+        min-height:118px;
+        gap:12px;
+    }
+
+    .brand-mark{
+        width:46px;
+        height:46px;
+    }
+
+    .brand-name{
+        font-size:13px;
+        letter-spacing:.27em;
+    }
+
+    .main-nav{
+        gap:10px 21px;
+    }
+
+    .main-nav a{
+        font-size:11px;
+        letter-spacing:.08em;
+        padding:5px 0 6px;
+    }
+
+    .hero{
+        padding-top:66px;
+    }
+
+    .eyebrow{
+        font-size:10px;
+        gap:9px;
+    }
+
+    .eyebrow::before{
+        width:31px;
+    }
+
+    .hero h1{
+        font-size:68px;
+    }
+
+    .hero-lead{
+        font-size:24px;
+    }
+
+    .layer-title{
+        font-size:53px;
+    }
+
+    .card-title{
+        font-size:39px;
+    }
+
+    .card-links{
+        gap:15px;
+    }
+
+    .card-link{
+        font-size:14px;
+    }
+
+    .institution-title{
+        font-size:62px;
+    }
+
+    .civilisation-title{
+        font-size:65px;
+    }
+
+    .documentation h2{
+        font-size:55px;
+    }
+
+    .documentation p{
+        font-size:25px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a class="brand" href="index.html" aria-label="NVO987 Home">
+            <span class="brand-mark"></span>
+            <span class="brand-name">NVO987</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="https://nvo987.us/legal-information.html">
+                Legal Information
+            </a>
+            <a href="/about.html">
+                Curriculum Vitæ
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="individual">
+
+    <div class="geometry" aria-hidden="true">
+
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="square-two"></div>
+        <div class="square-three"></div>
+
+        <div class="line-a"></div>
+        <div class="line-b"></div>
+        <div class="line-c"></div>
+        <div class="line-d"></div>
+
+        <div class="cross"></div>
+
+        <div class="node one"></div>
+        <div class="node two"></div>
+        <div class="node three"></div>
+        <div class="node four"></div>
+
+    </div>
+
+    <div class="container hero-content">
+
+        <div class="eyebrow">
+            NEXARIUM - OPEN DECENTRALIZED WEB INFRASTRUCTURE
+        </div>
+
+        <h1>
+            NVO987
+            <span>Layer</span>
+        </h1>
+
+        <p class="hero-lead">
+            A distributed personal infrastructure connecting identity,
+            research, archive, publishing, media, decentralized networks,
+            data, cryptography and persistent identifiers.
+        </p>
+
+        <div class="hero-meta reveal">
+
+            <div class="meta-cell">
+                <span class="meta-label">Layer</span>
+                <span class="meta-value">01 / Individual</span>
+            </div>
+
+            <div class="meta-cell">
+                <span class="meta-label">Primary Domain</span>
+                <span class="meta-value">www.nvo987.us</span>
+            </div>
+
+            <div class="meta-cell">
+                <span class="meta-label">Architecture</span>
+                <span class="meta-value">NEXARIUM</span>
+            </div>
+
+            <div class="meta-cell">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">Open infrastructure</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="layer-section" id="infrastructure">
+
+    <div class="container">
+
+        <div class="layer-header reveal">
+            <span class="layer-number">01</span>
+            <h2 class="layer-title">Individual</h2>
+            <span class="layer-tag">NVO987 Layer</span>
+        </div>
+
+        <p class="layer-description reveal">
+            A distributed personal infrastructure connecting identity,
+            scholarly research, archival records, publishing, media,
+            decentralized networks, structured data, cryptographic services
+            and persistent global identifiers.
+        </p>
+
+        <div class="infrastructure-grid">
+
+            <article class="infrastructure-card reveal" id="identity">
+
+                <span class="card-number">01</span>
+
+                <h3 class="card-title">Identity Infrastructure</h3>
+
+                <p class="card-description">
+                    Public identity and professional presence across
+                    interoperable social and identity systems.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link"
+                       href="https://www.facebook.com/nvo987/"
+                       target="_blank"
+                       rel="noopener">
+                        Facebook
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.linkedin.com/in/nvo987/"
+                       target="_blank"
+                       rel="noopener">
+                        LinkedIn
+                    </a>
+
+                    <a class="card-link"
+                       href="https://identity.nvo987.us"
+                       target="_blank"
+                       rel="noopener">
+                        Identity
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="research">
+
+                <span class="card-number">02</span>
+
+                <h3 class="card-title">Research Infrastructure</h3>
+
+                <p class="card-description">
+                    Scholarly identity, research records, publications,
+                    academic profiles and knowledge networks.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link"
+                       href="https://scholar.google.com/citations?user=iRM-GNQAAAAJ&hl"
+                       target="_blank"
+                       rel="noopener">
+                        Google Scholar
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.researchgate.net/profile/Nicholas-Van-Orton"
+                       target="_blank"
+                       rel="noopener">
+                        ResearchGate
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.webofscience.com/wos/author/record/PDY-1682-2025"
+                       target="_blank"
+                       rel="noopener">
+                        Web of Science
+                    </a>
+
+                    <a class="card-link"
+                       href="https://openalex.org/A5120949417"
+                       target="_blank"
+                       rel="noopener">
+                        OpenAlex
+                    </a>
+
+                    <a class="card-link"
+                       href="https://osf.io/user/t8bek"
+                       target="_blank"
+                       rel="noopener">
+                        OSF
+                    </a>
+
+                    <a class="card-link"
+                       href="https://cv.hal.science/van-orton-nicholas"
+                       target="_blank"
+                       rel="noopener">
+                        HAL
+                    </a>
+
+                    <a class="card-link"
+                       href="https://independent.academia.edu/nvo987"
+                       target="_blank"
+                       rel="noopener">
+                        Academia.edu
+                    </a>
+
+                    <a class="card-link"
+                       href="https://visualtheoryalgorithms.hcommons.org/"
+                       target="_blank"
+                       rel="noopener">
+                        Visual Theory Algorithms
+                    </a>
+
+                    <a class="card-link"
+                       href="https://europepmc.org/authors/0009-0007-4628-1871"
+                       target="_blank"
+                       rel="noopener">
+                        Europe PMC
+                    </a>
+
+                    <a class="card-link"
+                       href="https://philpeople.org/profiles/nicholas-van-orton"
+                       target="_blank"
+                       rel="noopener">
+                        PhilPeople
+                    </a>
+
+                    <a class="card-link"
+                       href="https://sciprofiles.com/profile/nicholas-van-orton/"
+                       target="_blank"
+                       rel="noopener">
+                        SciProfiles
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.scienceopen.com/user/nvo987"
+                       target="_blank"
+                       rel="noopener">
+                        ScienceOpen
+                    </a>
+
+                    <a class="card-link"
+                       href="https://profile.hcommons.org/members/nicholasvanorton/"
+                       target="_blank"
+                       rel="noopener">
+                        Humanities Commons
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.lens.org/lens/profile/nicholas-van-orton-scholar"
+                       target="_blank"
+                       rel="noopener">
+                        The Lens
+                    </a>
+
+                    <a class="card-link"
+                       href="https://www.growkudos.com/profile/nicholas_van-orton"
+                       target="_blank"
+                       rel="noopener">
+                        Kudos
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="archive">
+
+                <span class="card-number">03</span>
+
+                <h3 class="card-title">Archive Infrastructure</h3>
+
+                <p class="card-description">
+                    Persistent bibliographic and digital archival records
+                    supporting long-term access to published and preserved work.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link"
+                       href="https://openlibrary.org/authors/OL16511669A/Nicholas_Van-Orton"
+                       target="_blank"
+                       rel="noopener">
+                        Open Library
+                    </a>
+
+                    <a class="card-link"
+                       href="https://archive.org/details/@nicholas_van-orton"
+                       target="_blank"
+                       rel="noopener">
+                        Internet Archive
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="publishing">
+
+                <span class="card-number">04</span>
+
+                <h3 class="card-title">Publishing Infrastructure</h3>
+
+                <p class="card-description">
+                    Direct publishing infrastructure for essays, notes,
+                    research communication and long-form writing.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link"
+                       href="https://nvo987.substack.com/"
+                       target="_blank"
+                       rel="noopener">
+                        NVO987 Substack
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="media">
+
+                <span class="card-number">05</span>
+
+                <h3 class="card-title">Media Infrastructure</h3>
+
+                <p class="card-description">
+                    Distributed audiovisual and social media presence
+                    across interoperable publishing and communication networks.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link" href="https://portfolio.pixelfed.social/nvo987" target="_blank" rel="noopener">
+                        Pixelfed Portfolio
+                    </a>
+
+                    <a class="card-link" href="https://pixelfed.social/nvo987" target="_blank" rel="noopener">
+                        Pixelfed
+                    </a>
+
+                    <a class="card-link" href="https://www.instagram.com/nvo987/" target="_blank" rel="noopener">
+                        Instagram
+                    </a>
+
+                    <a class="card-link" href="https://www.threads.com/@nvo987" target="_blank" rel="noopener">
+                        Threads
+                    </a>
+
+                    <a class="card-link" href="https://x.com/nvo987" target="_blank" rel="noopener">
+                        X
+                    </a>
+
+                    <a class="card-link" href="https://www.tiktok.com/@nvo987" target="_blank" rel="noopener">
+                        TikTok
+                    </a>
+
+                    <a class="card-link" href="https://www.snapchat.com/@art-nvo987" target="_blank" rel="noopener">
+                        Snapchat
+                    </a>
+
+                    <a class="card-link" href="https://www.youtube.com/@nvo987-art-history" target="_blank" rel="noopener">
+                        YouTube
+                    </a>
+
+                    <a class="card-link" href="https://pinterest.com/nvo987identity/" target="_blank" rel="noopener">
+                        Pinterest
+                    </a>
+
+                    <a class="card-link" href="https://open.spotify.com/user/uti1pape8u8fm5vcoxfq23hdo" target="_blank" rel="noopener">
+                        Spotify
+                    </a>
+
+                    <a class="card-link" href="https://www.twitch.tv/nvo987/" target="_blank" rel="noopener">
+                        Twitch
+                    </a>
+
+                    <a class="card-link" href="https://www.reddit.com/user/Grand_Service448/" target="_blank" rel="noopener">
+                        Reddit
+                    </a>
+
+                    <a class="card-link" href="https://t.me/nvo987" target="_blank" rel="noopener">
+                        Telegram
+                    </a>
+
+                    <a class="card-link" href="https://wa.me/36702674440" target="_blank" rel="noopener">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="decentralized">
+
+                <span class="card-number">06</span>
+
+                <h3 class="card-title">Decentralized Infrastructure</h3>
+
+                <p class="card-description">
+                    Presence across federated and decentralized social
+                    communication protocols and independent networks.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link" href="https://misskey.art/@nvo987" target="_blank" rel="noopener">
+                        Misskey.art
+                    </a>
+
+                    <a class="card-link" href="https://misskey.design/@nvo987" target="_blank" rel="noopener">
+                        Misskey.design
+                    </a>
+
+                    <a class="card-link" href="https://smugcat.moe/@nvo987" target="_blank" rel="noopener">
+                        SmugCat
+                    </a>
+
+                    <a class="card-link" href="https://misskey.day/@nvo987" target="_blank" rel="noopener">
+                        Misskey.day
+                    </a>
+
+                    <a class="card-link" href="https://mastodon.social/@nvo987" target="_blank" rel="noopener">
+                        Mastodon Social
+                    </a>
+
+                    <a class="card-link" href="https://mastodon.art/@nvo987" target="_blank" rel="noopener">
+                        Mastodon Art
+                    </a>
+
+                    <a class="card-link" href="https://bsky.app/profile/nvo987.us" target="_blank" rel="noopener">
+                        Bluesky
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="data">
+
+                <span class="card-number">07</span>
+
+                <h3 class="card-title">Data Infrastructure</h3>
+
+                <p class="card-description">
+                    Modern data management solutions for structured information,
+                    machine processing, QR codes and digital web identification.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link" href="https://json.nvo987.us" target="_blank" rel="noopener">
+                        JSON
+                    </a>
+
+                    <a class="card-link" href="https://qr.nvo987.us" target="_blank" rel="noopener">
+                        QR
+                    </a>
+
+                    <a class="card-link" href="https://favicon.nvo987.us" target="_blank" rel="noopener">
+                        Favicon
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="cryptographic">
+
+                <span class="card-number">08</span>
+
+                <h3 class="card-title">Cryptographic Infrastructure</h3>
+
+                <p class="card-description">
+                    Dedicated endpoints representing established cryptographic
+                    hash functions and related computational infrastructure.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link" href="https://keccak.nvo987.us" target="_blank" rel="noopener">
+                        Keccak
+                    </a>
+
+                    <a class="card-link" href="https://blake.nvo987.us" target="_blank" rel="noopener">
+                        BLAKE
+                    </a>
+
+                    <a class="card-link" href="https://sha1.nvo987.us" target="_blank" rel="noopener">
+                        SHA-1
+                    </a>
+
+                    <a class="card-link" href="https://sha512.nvo987.us" target="_blank" rel="noopener">
+                        SHA-512
+                    </a>
+
+                    <a class="card-link" href="https://sha3.nvo987.us" target="_blank" rel="noopener">
+                        SHA-3
+                    </a>
+
+                    <a class="card-link" href="https://sha256.nvo987.us" target="_blank" rel="noopener">
+                        SHA-256
+                    </a>
+
+                    <a class="card-link" href="https://sha.nvo987.us" target="_blank" rel="noopener">
+                        Nexarium SHA Suite
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="infrastructure-card reveal" id="identifier">
+
+                <span class="card-number">09</span>
+
+                <h3 class="card-title">Identifier Infrastructure</h3>
+
+                <p class="card-description">
+                    Persistent identifiers connecting the NVO987 identity
+                    to standardized global identity and scholarly systems.
+                </p>
+
+                <div class="card-links">
+
+                    <a class="card-link" href="https://uuid.nvo987.us" target="_blank" rel="noopener">
+                        UUID Generator
+                    </a>
+
+                    <a class="card-link"
+                       href="https://orcid.org/0009-0007-4628-1871"
+                       target="_blank"
+                       rel="noopener">
+                        ORCID 0009-0007-4628-1871
+                    </a>
+
+                    <a class="card-link"
+                       href="https://isni.org/isni/0000000529640885"
+                       target="_blank"
+                       rel="noopener">
+                        ISNI 0000000529640885
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="layer-section dark institution" id="institution">
+
+    <div class="container">
+
+        <div class="institution-layout">
+
+            <div class="reveal">
+
+                <div class="institution-mark">02</div>
+
+                <h2 class="institution-title">
+                    <span>Institution</span>
+                </h2>
+
+            </div>
+
+            <div class="institution-content reveal">
+
+                <a
+                    class="institution-portal"
+                    href="https://www.layer.nvo987.fr/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    → Institution Portal
+                </a>
+
+                <h3>
+                    NVO987-Culture Visuelle Moderne et Contemporaine
+                </h3>
+
+                <p>
+                    The association implements cultural, artistic, educational
+                    and research programmes in the fields of contemporary art
+                    and visual culture. It organises exhibitions, artistic
+                    projects, workshops, training sessions and professional
+                    events. It places particular emphasis on working with
+                    children and young people: through artistic, creative,
+                    educational and community programmes, it supports their
+                    creative and critical thinking, self-expression and ability
+                    to cooperate. It pays special attention to the cultural and
+                    educational opportunities of disadvantaged children, as well
+                    as to children’s rights and participation. In cooperation
+                    with artists, researchers, educators, and national and
+                    international institutions, it also carries out research,
+                    projects and creates digital content, as well as publishing
+                    professional and cultural publications. As a non-profit
+                    organisation, it promotes culture, education, research, and
+                    cultural and social equality of opportunity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="layer-section civilisation" id="civilisation">
+
+    <div class="container">
+
+        <div class="layer-header reveal">
+
+            <span class="layer-number">03</span>
+
+            <h2 class="layer-title">
+                Civilisation
+            </h2>
+
+        </div>
+
+        <div class="civilisation-intro">
+
+            <div class="reveal">
+
+                <h2 class="civilisation-title">
+                    NVO987<br>
+                    Civilisation<br>
+                    Layer
+                </h2>
+
+            </div>
+
+            <div class="civilisation-copy reveal">
+                An interconnected infrastructure for the long-term management
+                and accessibility of institutional knowledge, research, cultural
+                content, data and digital systems.
+            </div>
+
+        </div>
+
+        <div class="civilisation-grid">
+
+            <article class="civilisation-card reveal">
+
+                <span class="card-number">01</span>
+
+                <h3 class="card-title">
+                    CIR
+                </h3>
+
+                <p class="card-description">
+                    A structural model of the relationship between the complexity of autonomous systems and human interpretative capacity.
+                </p>
+
+                <div class="card-links">
+
+                    <a
+                        class="card-link"
+                        href="https://cir.nvo987.fr"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        cir.nvo987.fr
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="civilisation-card reveal">
+
+                <span class="card-number">02</span>
+
+                <h3 class="card-title">
+                    MCP
+                </h3>
+
+                <p class="card-description">
+                    Machine-oriented infrastructure endpoint connecting
+                    computational systems to the wider NEXARIUM architecture.
+                </p>
+
+                <div class="card-links">
+
+                    <a
+                        class="card-link"
+                        href="https://mcp.nexarium.us"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        mcp.nexarium.us
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="architecture">
+
+    <div class="container">
+
+        <div class="architecture-grid">
+
+            <div class="reveal">
+
+                <div class="documentation-label">
+                    Structural Architecture
+                </div>
+
+                <h2 class="architecture-title">
+                    One system.<br>
+                    Three layers.
+                </h2>
+
+                <p class="architecture-copy">
+                    NEXARIUM is an open, decentralized infrastructure ecosystem
+                    for persistent digital identity, interoperable knowledge,
+                    institutional continuity and long-term information
+                    preservation.
+                </p>
+
+            </div>
+
+            <div class="architecture-diagram reveal">
+
+                <div class="diagram-ring"></div>
+
+                <div class="diagram-node individual">
+                    <strong>Individual</strong>
+                    <span>01</span>
+                </div>
+
+                <div class="diagram-node institution">
+                    <strong>Institution</strong>
+                    <span>02</span>
+                </div>
+
+                <div class="diagram-node civilisation">
+                    <strong>Civilisation</strong>
+                    <span>03</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-name">
+                Nicholas Van-Orton
+            </div>
+
+            <div class="footer-contact">
+
+                <a href="mailto:nvo@nvo987.us">
+                    nvo@nvo987.us
+                </a>
+
+                <br>
+
+                <a
+                    class="did-link"
+                    href="https://identity.nvo987.us"
+                    title="did:web:identity.nvo987.us"
+                >
+                    did:web:identity.nvo987.us
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Nicholas Van-Orton
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold:.08,
+            rootMargin:"0px 0px -40px 0px"
+        }
+    );
+
+    reveals.forEach((element) => {
+        observer.observe(element);
+    });
+
+    const header = document.querySelector(".site-header");
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if(window.scrollY > 80){
+
+                header.style.boxShadow =
+                    "0 8px 30px rgba(0,0,0,.06)";
+
+            }else{
+
+                header.style.boxShadow = "none";
+
+            }
+
+        },
+        {
+            passive:true
+        }
+    );
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const selector =
+                link.getAttribute("href");
+
+            if(!selector || selector === "#"){
+                return;
+            }
+
+            const target =
+                document.querySelector(selector);
+
+            if(target){
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            }
+
+        });
+
+    });
+
+    const geometry =
+        document.querySelector(".geometry");
+
+    const finePointer =
+        window.matchMedia("(pointer:fine)").matches;
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion:reduce)"
+        ).matches;
+
+    if(
+        geometry &&
+        finePointer &&
+        !reducedMotion
+    ){
+
+        window.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const x =
+                    (event.clientX / window.innerWidth - .5) * 20;
+
+                const y =
+                    (event.clientY / window.innerHeight - .5) * 20;
+
+                geometry.style.transform =
+                    `translate3d(${x}px,${y}px,0)`;
+
+            },
+            {
+                passive:true
+            }
+        );
+
+    }
+
+});
+</script>
+
+</body>
+</html>
