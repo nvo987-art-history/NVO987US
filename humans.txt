@@ -1,0 +1,40 @@
+/* TEAM */
+
+Name: Nicholas Van-Orton
+Role: Maintainer
+Website: https://nvo987.us/
+Email: nvo@nvo987.us
+
+/* PROJECT */
+
+Name: NVO987
+Architecture: NEXARIUM
+Description: Open decentralized web infrastructure connecting identity,
+research, archives, publishing, media, decentralized networks, data,
+cryptography and persistent digital identifiers.
+
+Primary domain: https://nvo987.us/
+Identity: did:web:identity.nvo987.us
+
+/* LAYERS */
+
+Individual
+Institution
+Civilisation
+
+/* TECHNOLOGY */
+
+HTML
+CSS
+JavaScript
+Structured metadata
+Decentralized identity references
+
+/* SOCIAL AND RESEARCH PROFILES */
+
+X: https://x.com/nvo987
+Instagram: https://www.instagram.com/nvo987/
+LinkedIn: https://www.linkedin.com/in/nvo987/
+Bluesky: https://bsky.app/profile/nvo987.us
+Google Scholar: https://scholar.google.com/citations?user=iRM-GNQAAAAJ&hl
+ORCID: https://orcid.org/0009-0007-4628-1871
