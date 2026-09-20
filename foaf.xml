@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <foaf:PersonalProfileDocument rdf:about="https://nvo987.us/foaf.xml">
+    <foaf:maker rdf:resource="#nicholas-van-orton"/>
+    <foaf:primaryTopic rdf:resource="#nicholas-van-orton"/>
+  </foaf:PersonalProfileDocument>
+
+  <foaf:Person rdf:about="#nicholas-van-orton">
+    <foaf:name>Nicholas Van-Orton</foaf:name>
+    <foaf:givenName>Nicholas</foaf:givenName>
+    <foaf:familyName>Van-Orton</foaf:familyName>
+    <foaf:mbox rdf:resource="mailto:nvo@nvo987.us"/>
+    <foaf:homepage rdf:resource="https://nvo987.us/"/>
+    <foaf:account>
+      <foaf:OnlineAccount>
+        <foaf:accountServiceHomepage rdf:resource="https://x.com/"/>
+        <foaf:accountName>nvo987</foaf:accountName>
+      </foaf:OnlineAccount>
+    </foaf:account>
+    <foaf:openid rdf:resource="https://identity.nvo987.us"/>
+    <rdfs:comment>
+      NVO987 is a distributed personal infrastructure connecting identity,
+      research, archives, publishing, media, decentralized networks, data,
+      cryptography and persistent digital identifiers.
+    </rdfs:comment>
+  </foaf:Person>
+
+</rdf:RDF>
