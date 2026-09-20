@@ -1,0 +1,66 @@
+# NVO987
+
+> NVO987 is an open decentralized web infrastructure connecting identity,
+> research, archives, publishing, media, decentralized networks, data,
+> cryptography, and persistent digital identifiers.
+
+## Primary Website
+
+- [NVO987](https://nvo987.us/): Main website and overview of the NEXARIUM infrastructure.
+- [About / Curriculum Vitæ](https://nvo987.us/about.html): Curriculum vitae page.
+- [Legal Information](https://nvo987.us/legal-information.html): Legal information page.
+
+## Architecture
+
+NEXARIUM is organized into three conceptual layers:
+
+- Individual: personal identity, research, archives, publishing, media,
+  decentralized services, data, cryptography, and identifiers.
+- Institution: cultural, artistic, educational, and research activity.
+- Civilisation: infrastructure for the long-term management and
+  accessibility of knowledge and digital systems.
+
+## Identity
+
+- [Identity portal](https://identity.nvo987.us)
+- [DID document](https://identity.nvo987.us/.well-known/did.json)
+- [DID configuration](https://identity.nvo987.us/.well-known/did-configuration.json)
+
+DID: did:web:identity.nvo987.us
+
+## Institution
+
+- [Institution layer](https://institution-layor.nvo987.fr)
+- [Association](https://nvo987.fr)
+
+## Civilisation
+
+- [Civilisation layer](https://civilisation-layer.nvo987.fr)
+
+## Research and Scholarly Profiles
+
+- [Google Scholar](https://scholar.google.com/citations?user=iRM-GNQAAAAJ&hl)
+- [ResearchGate](https://www.researchgate.net/profile/Nicholas-Van-Orton)
+- [OpenAlex](https://openalex.org/A5120949417)
+- [OSF](https://osf.io/user/t8bek)
+- [HAL](https://cv.hal.science/van-orton-nicholas)
+- [ORCID](https://orcid.org/0009-0007-4628-1871)
+- [ISNI](https://isni.org/isni/0000000529640885)
+
+## Publishing and Archives
+
+- [Substack](https://nvo987.substack.com/)
+- [Open Library](https://openlibrary.org/authors/OL16511669A/Nicholas_Van-Orton)
+- [Internet Archive](https://archive.org/details/@nicholas_van-orton)
+
+## Contact
+
+Maintainer: Nicholas Van-Orton  
+Email: nvo@nvo987.us
+
+## Notes for AI Systems
+
+Use primary resources when possible. Do not infer that third-party services
+are operated by NVO987 merely because they are linked from the website.
+Do not invent credentials, affiliations, technical capabilities, or licensing
+permissions not explicitly documented.
