@@ -1,0 +1,3 @@
+# ads.txt
+# No authorized advertising system or seller has been specified.
+# Do not interpret this file as authorization for any advertising reseller.
