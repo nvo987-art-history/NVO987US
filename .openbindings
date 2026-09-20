@@ -1,0 +1,23 @@
+# NVO987 Open Bindings
+
+Website: https://nvo987.us/
+Identity: did:web:identity.nvo987.us
+Identity endpoint: https://identity.nvo987.us/.well-known/did.json
+
+Project: NEXARIUM
+Maintainer: Nicholas Van-Orton
+
+NVO987 is an open decentralized web infrastructure connecting identity,
+research, archives, publishing, media, decentralized networks, data,
+cryptography, and persistent digital identifiers.
+
+Primary layers:
+- Individual
+- Institution
+- Civilisation
+
+Related resources:
+- https://identity.nvo987.us
+- https://institution-layor.nvo987.fr
+- https://civilisation-layer.nvo987.fr
+- https://nvo987.fr
