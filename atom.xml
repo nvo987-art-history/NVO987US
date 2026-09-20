@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://nvo987.us/</id>
+  <title>NVO987 | Nicholas Van-Orton</title>
+  <subtitle>Open decentralized web infrastructure connecting identity, research, archives, publishing, media, data, cryptography and persistent digital identifiers.</subtitle>
+  <link href="https://nvo987.us/" rel="alternate" />
+  <link href="https://nvo987.us/atom.xml" rel="self" type="application/atom+xml" />
+  <updated>2026-09-20T00:00:00Z</updated>
+  <author>
+    <name>Nicholas Van-Orton</name>
+    <email>nvo@nvo987.us</email>
+  </author>
+  <entry>
+    <id>https://nvo987.us/</id>
+    <title>NVO987 — Open Decentralized Web Infrastructure</title>
+    <link href="https://nvo987.us/" rel="alternate" />
+    <updated>2026-09-20T00:00:00Z</updated>
+    <summary>NVO987 is a distributed personal infrastructure connecting identity, research, archives, publishing, media, decentralized networks, data, cryptography and persistent identifiers through the NEXARIUM architecture.</summary>
+  </entry>
+</feed>
