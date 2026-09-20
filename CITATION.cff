@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you reference the NVO987 website or its infrastructure, please cite it using the metadata below."
+title: "NVO987 — Open Decentralized Web Infrastructure"
+type: software
+authors:
+  - family-names: "Van-Orton"
+    given-names: "Nicholas"
+url: "https://nvo987.us/"
+repository-code: "https://nvo987.us/"
+abstract: >-
+  NVO987 is an open decentralized web infrastructure connecting identity,
+  research, archives, publishing, media, decentralized networks, data,
+  cryptography, and persistent digital identifiers through the NEXARIUM
+  architecture.
