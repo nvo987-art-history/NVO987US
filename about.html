@@ -1438,13 +1438,17 @@ a:focus-visible {
 .banner-action {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between; /* <--- Biztosítja, hogy a nyíl a jobb szélen maradjon */
+    gap: 15px;
+    width: 100%;                    /* <--- Nem engedi kitágulni a dobozt */
     min-height: 48px;
     border-bottom: 1px solid var(--ink);
     font-family: var(--mono);
     font-size: 13px;
     letter-spacing: .1em;
     text-transform: uppercase;
+    word-break: break-word;         /* <--- Megakadályozza a kilógást */
+    overflow: hidden;               /* <--- Lezárja a túllógást */
     transition:
         color .3s ease,
         border-color .3s ease,
@@ -1454,6 +1458,7 @@ a:focus-visible {
 .banner-action span {
     color: var(--orange);
     font-size: 20px;
+    flex-shrink: 0;                 /* <--- A nyíl nem zsugorodik össze */
 }
 
 .banner-action:hover {
@@ -1464,10 +1469,14 @@ a:focus-visible {
     .cv-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;           /* <--- Kitölti a rendelkezésre álló szélességet, nem feszíti szét */
     gap: 18px;
     margin-top: 42px;
+    width: 100%;                    /* <--- Nem engedi túlcsordulni */
+    max-width: 100%;
+    overflow: hidden;
 }
+ 
 
 .cv-links .banner-action {
     margin-top: 0 !important;
